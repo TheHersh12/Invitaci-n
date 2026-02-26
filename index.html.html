@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shower Aitana</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(180deg,#fde6ef,#f9d4e6);
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+}
+
+/* CONTENEDOR MÓVIL */
+.container{
+  width:100%;
+  max-width:390px;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+/* ✨ BRILLOS */
+.sparkle{
+  position:absolute;
+  font-size:18px;
+  animation:float 7s linear infinite;
+  opacity:.8;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-10vh)}
+}
+
+/* 🌸 PÉTALOS */
+.petal{
+  position:absolute;
+  font-size:16px;
+  animation:fall 9s linear infinite;
+}
+
+@keyframes fall{
+  from{transform:translateY(-10vh) rotate(0)}
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+
+/* SOBRE */
+.envelope{
+  position:relative;
+  width:90%;
+  max-width:320px;
+  height:220px;
+  background:#f8d7e4;
+  border-radius:14px;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.25),
+    inset 0 4px 10px rgba(255,255,255,.6);
+}
+
+/* SOLAPA */
+.flap{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#f4c6d8;
+  clip-path:polygon(0 0,100% 0,50% 65%);
+  transform-origin:top;
+  transition:transform .9s cubic-bezier(.4,2,.3,1);
+  z-index:4;
+}
+
+/* SELLO */
+.seal{
+  position:absolute;
+  top:85px;
+  left:50%;
+  transform:translateX(-50%);
+  width:58px;
+  height:58px;
+  background:#d84a78;
+  border-radius:50%;
+  box-shadow:inset 0 4px 8px rgba(255,255,255,.5),
+             0 6px 12px rgba(0,0,0,.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  color:white;
+  z-index:6;
+  transition:.5s;
+}
+
+/* CARTA */
+.letter{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translate(-50%,100%);
+  width:92%;
+  height:210px;
+  background:white;
+  border-radius:14px;
+  padding:22px 18px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  opacity:0;
+  transition:all 1s cubic-bezier(.4,2,.3,1);
+  z-index:2;
+}
+
+/* TEXTO */
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:34px;
+  color:#e58aa5;
+  margin:0;
+}
+
+.name{
+  font-family:'Great Vibes',cursive;
+  font-size:38px;
+  color:#d85f8f;
+  margin:6px 0;
+}
+
+.info{
+  font-size:14px;
+  color:#666;
+  line-height:1.6;
+}
+
+/* CONEJITOS */
+.bunnies{
+  font-size:26px;
+  margin-bottom:6px;
+}
+
+/* ABIERTO */
+.open .flap{ transform:rotateX(180deg); }
+.open .seal{ transform:translateX(-50%) scale(0); opacity:0; }
+
+.open .letter{
+  transform:translate(-50%,-120px);
+  opacity:1;
+  z-index:10;
+}
+
+/* INDICACIÓN */
+.hint{
+  position:absolute;
+  bottom:-40px;
+  width:100%;
+  text-align:center;
+  color:white;
+  font-size:14px;
+  animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+  0%,100%{opacity:.4}
+  50%{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+  <!-- ✨ BRILLOS -->
+  <script>
+  for(let i=0;i<12;i++){
+    let s=document.createElement("div");
+    s.className="sparkle";
+    s.style.left=Math.random()*100+"%";
+    s.style.animationDuration=(5+Math.random()*4)+"s";
+    s.innerHTML="✨";
+    container.appendChild(s);
+  }
+
+  for(let i=0;i<10;i++){
+    let p=document.createElement("div");
+    p.className="petal";
+    p.style.left=Math.random()*100+"%";
+    p.style.animationDuration=(7+Math.random()*4)+"s";
+    p.innerHTML="🌸";
+    container.appendChild(p);
+  }
+  </script>
+
+  <div class="envelope" id="env">
+
+    <div class="flap"></div>
+    <div class="seal">👑</div>
+
+    <div class="letter">
+      <div class="bunnies">🐰🐰</div>
+
+      <h1>Baby Shower</h1>
+      <div class="name">Aitana</div>
+
+      <div class="info">
+        📅 Sábado 7 de Marzo — 3:30 PM<br>
+        📍 Lote 840 Sector #5 Cruz Blanca San Juan Sac.<br><br>
+
+        🎀 <p>“He aqui, herencia de Jehová son los hijos;<br>
+            Cosa de estima el fruto del vientre”<br>
+            <strong>Salmo 127:3</strong>💕<br>
+        💖 Te esperamos
+      </div>
+    </div>
+
+    <div class="hint">Toca el sobre 👑</div>
+
+  </div>
+
+</div>
+
+<audio id="sound" preload="auto">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const env = document.getElementById("env");
+const flap = document.querySelector(".flap");
+const seal = document.querySelector(".seal");
+const letter = document.querySelector(".letter");
+const sound = document.getElementById("sound");
+
+// 👉 Función abrir/cerrar universal
+function toggleEnvelope(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  env.classList.toggle("open");
+
+  // sonido solo si el dispositivo lo permite
+  if(sound){
+    sound.currentTime = 0;
+    sound.play().catch(()=>{});
+  }
+}
+
+// 👉 Evento universal compatible WhatsApp iOS
+flap.addEventListener("pointerdown", toggleEnvelope);
+seal.addEventListener("pointerdown", toggleEnvelope);
+
+// 👉 Evita que la carta bloquee el toque
+letter.style.pointerEvents = "none";
+</script>
+
+</body>
+</html>
